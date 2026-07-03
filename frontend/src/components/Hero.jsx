@@ -95,16 +95,16 @@ const Hero = () => {
         </div>
 
         {/* Two Column Layout: Left Content + Right Carousel */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
           {/* Left Side: Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-left"
+            className="text-center md:text-left order-2 md:order-1"
           >
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold font-space mb-6 leading-tight text-slate-900"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold font-space mb-4 md:mb-6 leading-tight text-slate-900"
             >
               Grow Your Business with
               <br />
@@ -115,7 +115,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-xl text-slate-700 mb-10"
+              className="text-base sm:text-lg md:text-xl text-slate-700 mb-6 md:mb-10"
             >
               Premium web development, AI automation, and mobile apps tailored for your success in the digital era. Fast delivery, affordable pricing, and unmatched quality.
             </motion.p>
@@ -124,19 +124,19 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start"
             >
               <a
                 href="https://wa.me/919940671224?text=Hi%20SUSEJ%20SOLUTIONS%2C%20I%27d%20like%20a%20free%20demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-gradient-to-r from-green-500 to-violet-600 text-white rounded-xl font-semibold text-lg hover:shadow-xl hover:shadow-green-500/30 transition-all flex items-center justify-center gap-2"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-violet-600 text-white rounded-xl font-semibold text-base sm:text-lg hover:shadow-xl hover:shadow-green-500/30 transition-all flex items-center justify-center gap-2"
               >
-                Get Free Demo <ChevronRight size={20} />
+                Get Free Demo <ChevronRight size={18} />
               </a>
               <Link
                 to="/services"
-                className="px-8 py-4 bg-white border border-slate-200 text-slate-800 rounded-xl font-semibold text-lg hover:bg-slate-50 transition-all shadow-sm text-center"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white border border-slate-200 text-slate-800 rounded-xl font-semibold text-base sm:text-lg hover:bg-slate-50 transition-all shadow-sm text-center"
               >
                 Our Services
               </Link>
@@ -145,9 +145,10 @@ const Hero = () => {
 
           {/* Right Side: Carousel */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
+            className="order-1 md:order-2"
           >
             <div className="relative">
               {/* Carousel Container */}
@@ -155,30 +156,30 @@ const Hero = () => {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentSlide}
-                    initial={{ opacity: 0, x: 100 }}
+                    initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -100 }}
+                    exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.5 }}
                     className="relative"
                   >
                     <img
                       src={carouselItems[currentSlide].image}
                       alt={carouselItems[currentSlide].title}
-                      className="w-full h-80 md:h-96 object-cover"
+                      className="w-full h-56 sm:h-64 md:h-80 lg:h-96 object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-left">
-                      <h3 className="text-2xl font-bold text-white mb-2">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-left">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 sm:mb-2">
                         {carouselItems[currentSlide].title}
                       </h3>
-                      <p className="text-white/90 mb-4 text-sm md:text-base">
+                      <p className="text-white/90 mb-3 sm:mb-4 text-xs sm:text-sm md:text-base">
                         {carouselItems[currentSlide].description}
                       </p>
                       <a
                         href="https://wa.me/919940671224?text=Hi%20SUSEJ%20SOLUTIONS%2C%20I%27d%20like%20to%20enroll%20now!"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block px-6 py-2 bg-gradient-to-r from-green-500 to-violet-600 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-green-500/30 transition-all text-sm md:text-base"
+                        className="inline-block px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-green-500 to-violet-600 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-green-500/30 transition-all text-xs sm:text-sm md:text-base"
                       >
                         Enroll Now
                       </a>
@@ -186,29 +187,29 @@ const Hero = () => {
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Navigation Arrows */}
+                {/* Navigation Arrows - hide on small mobile */}
                 <button
                   onClick={prevSlide}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-800 p-2 rounded-full shadow-lg transition-all hover:scale-110"
+                  className="hidden sm:block absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-800 p-1.5 sm:p-2 rounded-full shadow-lg transition-all hover:scale-110"
                 >
-                  <ChevronLeft size={24} />
+                  <ChevronLeft size={18} />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-800 p-2 rounded-full shadow-lg transition-all hover:scale-110"
+                  className="hidden sm:block absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-800 p-1.5 sm:p-2 rounded-full shadow-lg transition-all hover:scale-110"
                 >
-                  <ChevronRightIcon size={24} />
+                  <ChevronRightIcon size={18} />
                 </button>
               </div>
 
               {/* Slide Indicators */}
-              <div className="flex justify-center gap-3 mt-6">
+              <div className="flex justify-center gap-2 sm:gap-3 mt-4 sm:mt-6">
                 {carouselItems.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      currentSlide === index ? 'bg-gradient-to-r from-green-500 to-violet-600 w-8' : 'bg-slate-300'
+                    className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                      currentSlide === index ? 'bg-gradient-to-r from-green-500 to-violet-600 w-6 sm:w-8' : 'bg-slate-300'
                     }`}
                   />
                 ))}

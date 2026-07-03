@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-0">
+          <Link to="/" className="flex items-center gap-2">
             <img src={susejLogo} alt="SUSEJ SOLUTIONS" className="h-20 object-contain" />
             <div>
               <div className="text-2xl font-bold font-space gradient-text">SUSEJ SOLUTIONS</div>
@@ -48,7 +48,7 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="https://wa.me/916385823899?text=Hi%20SUSEJ%20SOLUTIONS%2C%20I%27d%20like%20a%20free%20quote"
+              href="https://wa.me/919940671224?text=Hi%20SUSEJ%20SOLUTIONS%2C%20I%27d%20like%20a%20free%20quote"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-gradient-to-r from-green-500 to-violet-600 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-green-500/30 transition-all"
