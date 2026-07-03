@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "news"
+    label: "News & Updates"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - {
+          label: "Type",
+          name: "type",
+          widget: "select",
+          options: ["product", "update", "announcement"],
+        }
+      - { label: "Date", name: "date", widget: "string" }
+      - {
+          label: "Color",
+          name: "color",
+          widget: "select",
+          options:
+            [
+              "from-blue-500 to-cyan-600",
+              "from-violet-500 to-purple-600",
+              "from-green-500 to-emerald-600",
+              "from-pink-500 to-rose-600",
+              "from-orange-500 to-red-600",
+            ],
+        }
