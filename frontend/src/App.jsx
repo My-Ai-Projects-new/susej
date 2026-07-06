@@ -6,10 +6,10 @@ import WhatsAppButton from './components/WhatsAppButton'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
-import Courses from './pages/Courses'
 import Internship from './pages/Internship'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
+import Careers from './pages/Careers'
 
 function ScrollToTop() {
   const location = useLocation()
@@ -33,8 +33,8 @@ function AppContent() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/courses" element={<Courses />} />
         <Route path="/internship" element={<Internship />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

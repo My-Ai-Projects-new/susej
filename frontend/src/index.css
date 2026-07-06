@@ -9,10 +9,11 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
   background-color: #ffffff;
   color: #1e293b; /* slate-900 */
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
 .glass-card {
@@ -22,14 +23,14 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #10b981 0%, #ec4899 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #10b981 50%, #7c3aed 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #f0fdf4 0%, #fdf2f8 100%);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
 @keyframes float {
@@ -53,4 +54,29 @@ body {
 .animate-marquee {
   display: inline-block;
   animation: marquee 20s linear infinite;
+}
+
+/* Corporate styling for TCS-like feel */
+.corporate-btn {
+  background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.corporate-btn:hover {
+  background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transitions for cards */
+.corporate-card {
+  transition: all 0.3s ease;
+}
+
+.corporate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }

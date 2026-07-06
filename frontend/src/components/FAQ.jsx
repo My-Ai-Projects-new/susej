@@ -20,8 +20,8 @@ const faqs = [
     answer: 'We provide dedicated 24/7 support and maintenance services to keep your solutions running smoothly.',
   },
   {
-    question: 'Do you also offer training and courses?',
-    answer: 'Yes! We offer premium courses in Full Stack Development and AI, plus internship programs!',
+    question: 'Do you also offer internship programs?',
+    answer: 'Yes! We offer comprehensive internship programs in Full Stack Development and AI with real-world projects and mentorship!',
   },
 ]
 

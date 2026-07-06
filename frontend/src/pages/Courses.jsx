@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import CourseCards from '../components/CourseCards'
 import { Calendar, CheckCircle, ChevronDown } from 'lucide-react'
+import webDevImage from '../images/webdevelopement_image.png'
 
 const Courses = () => {
   const [selectedCourse, setSelectedCourse] = useState('fullstack')
@@ -89,10 +90,35 @@ const Courses = () => {
 
   return (
     <div className="pt-20">
-      <section className="py-24 hero-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold font-space mb-6 text-slate-900">Premium <span className="gradient-text">Courses</span></h1>
-          <p className="text-xl text-slate-700 max-w-3xl mx-auto">Industry-aligned training programs designed to launch your career in technology with hands-on projects and expert mentorship.</p>
+      {/* Hero Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={webDevImage} alt="Background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-purple-900/70 to-slate-900/80"></div>
+        </div>
+        
+        {/* Transparent Background Text */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 0.15, scale: 1 }}
+            transition={{ duration: 1.5 }}
+            className="text-[12rem] sm:text-[16rem] lg:text-[24rem] font-black text-white tracking-wider select-none"
+          >
+            COURSES
+          </motion.h1>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white text-sm font-bold uppercase tracking-wider mb-6">
+            Courses
+          </span>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white">
+            Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Courses</span>
+          </h1>
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            Industry-aligned training programs designed to launch your career in technology with hands-on projects and expert mentorship.
+          </p>
         </div>
       </section>
 
@@ -107,27 +133,32 @@ const Courses = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold font-space mb-4 text-slate-900">Course <span className="gradient-text">Curriculum</span></h2>
+            <span className="inline-block px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-bold uppercase tracking-wider mb-4">
+              Curriculum
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-slate-900">
+              Course <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Curriculum</span>
+            </h2>
           </motion.div>
 
           {/* Course Toggle */}
-          <div className="flex justify-center gap-4 mb-12">
+          <div className="flex justify-center gap-4 mb-12 flex-wrap">
             <button
               onClick={() => setSelectedCourse('fullstack')}
-              className={`px-8 py-3 rounded-xl font-semibold transition-all ${
+              className={`px-8 py-3 rounded-xl font-bold transition-all ${
                 selectedCourse === 'fullstack'
-                  ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
-                  : 'bg-white border border-slate-200 text-slate-700 hover:border-indigo-500'
+                  ? 'bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg'
+                  : 'bg-white border border-slate-200 text-slate-700 hover:border-blue-500'
               }`}
             >
               Full Stack Development
             </button>
             <button
               onClick={() => setSelectedCourse('ai')}
-              className={`px-8 py-3 rounded-xl font-semibold transition-all ${
+              className={`px-8 py-3 rounded-xl font-bold transition-all ${
                 selectedCourse === 'ai'
-                  ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg'
-                  : 'bg-white border border-slate-200 text-slate-700 hover:border-purple-500'
+                  ? 'bg-gradient-to-r from-indigo-600 to-purple-700 text-white shadow-lg'
+                  : 'bg-white border border-slate-200 text-slate-700 hover:border-indigo-500'
               }`}
             >
               Artificial Intelligence
@@ -142,23 +173,23 @@ const Courses = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card rounded-2xl overflow-hidden"
+                className="corporate-card rounded-2xl overflow-hidden border border-slate-100"
               >
                 <button
                   onClick={() => setOpenMonth(openMonth === index ? null : index)}
                   className="w-full px-8 py-6 flex items-center justify-between text-left"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
+                    <div className={`w-12 h-12 bg-gradient-to-r ${selectedCourse === 'fullstack' ? 'from-blue-600 to-indigo-700' : 'from-indigo-600 to-purple-700'} rounded-xl flex items-center justify-center`}>
                       <Calendar size={24} className="text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-90">{item.month}</h3>
+                    <h3 className="text-2xl font-extrabold text-slate-900">{item.month}</h3>
                   </div>
                   <motion.div
                     animate={{ rotate: openMonth === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ChevronDown size={28} className="text-accent" />
+                    <ChevronDown size={28} className={`${selectedCourse === 'fullstack' ? 'text-blue-600' : 'text-indigo-600'}`} />
                   </motion.div>
                 </button>
 
@@ -171,10 +202,10 @@ const Courses = () => {
                     className="px-8 pb-6"
                   >
                     <div className="grid md:grid-cols-2 gap-4">
-                      {item.topics.map((topic, i) => (
-                        <div key={i} className="flex items-center gap-3">
-                          <CheckCircle size={20} className="text-accent flex-shrink-0" />
-                          <span className="text-slate-70">{topic}</span>
+                      {item.topics.map((topic, idx) => (
+                        <div key={idx} className="flex items-center gap-3">
+                          <CheckCircle size={20} className={`${selectedCourse === 'fullstack' ? 'text-blue-600' : 'text-indigo-600'} flex-shrink-0`} />
+                          <span className="text-slate-700">{topic}</span>
                         </div>
                       ))}
                     </div>
